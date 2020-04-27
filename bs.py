@@ -3,6 +3,7 @@ import math
 
 while True:
     a = []
+    y = ['H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe', 'Cs', 'Ba', 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 'At', 'Rn', 'Fr', 'Ra', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 'Es', 'Fm', 'Md', 'No', 'Lr', 'Rf', 'Db', 'Sg', 'Bh', 'Hs', 'Mt', 'Ds', 'Rg', 'Cn', 'Nh', 'Fl', 'Mc', 'Lv', 'Ts', 'Og']  
     
     lines = int(input())
     for i in range(lines):
@@ -42,5 +43,34 @@ while True:
             
         print(numbers[-1])
         
+    elif a[0] == "ss_f: Unauthorized" or a[0] == "rs_f: Unauthorized":
+        ab = "abcdefghijklmnopqrstuvwxyz"
+        for c in a[1]:
+            if c.islower():
+                # print( len(a[1]) - a[1].find(c) )
+                print( ab.find(c) )
+
+    elif a[0] == "gs_m: Unauthorized":
+        a[1] = a[1].split(' ')[2]
+        print(y[int(a[1])-1])
+
+    elif a[0] == "ss_m: Unauthorized":
+        print(y.index(a[1])+1)
+
+    elif a[0] == "ss_con: Unauthorized":
+        a[1] = a[1].split('...')
+        it = 0
+        while a[1][it][1] == 'G':
+            it+=1
+        if a[1][it][2] != 'O':
+            print(a[1][it][2])
+        else:
+            print('O')
+
+    elif a[0] == "ss_colv: Unauthorized":
+        # a[1] = a[1].replace('-','+')
+        # a[1] = a[1].replace('G-','G+')
+        print(a[1])
+
     else:
         print("shitty puzzle")
