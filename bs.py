@@ -28,5 +28,19 @@ while True:
             
         print(numbers[-1])
         
+    elif a[0] == "rs_n: Unauthorized":
+        numbers = a[1][1:].split(", ")
+        s2 = numbers[-1]
+        numbers.pop()
+        numbers = list(map(int, numbers))
+        repeat = int(s2.split("[")[1].split("]")[0])
+        current = len(numbers)
+        diff = numbers[1] - numbers[0]
+        while current < repeat+1:
+            numbers.append( (numbers[-1]+diff) )
+            current+=1;
+            
+        print(numbers[-1])
+        
     else:
         print("shitty puzzle")
